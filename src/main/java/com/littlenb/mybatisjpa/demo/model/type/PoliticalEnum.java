@@ -1,7 +1,7 @@
 package com.littlenb.mybatisjpa.demo.model.type;
 
 
-import com.littlenb.persistence.type.ICodeEnum;
+import com.littlenb.mybatisjpa.type.ICodeEnum;
 
 /**
  * 政治面貌
