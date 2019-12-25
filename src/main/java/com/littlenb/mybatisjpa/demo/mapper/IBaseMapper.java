@@ -5,11 +5,15 @@ import com.littlenb.mybatisjpa.annotation.InsertDefinition;
 import com.littlenb.mybatisjpa.annotation.UpdateDefinition;
 import com.littlenb.mybatisjpa.support.Certainty;
 import com.littlenb.mybatisjpa.type.SelectorStrategy;
+import java.util.List;
 
 /**
  * @author sway.li
  **/
 public interface IBaseMapper<T> {
+
+  @InsertDefinition
+  int insertBatch(List<T> t);
 
   @InsertDefinition
   int insert(T t);

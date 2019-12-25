@@ -37,7 +37,7 @@
 	</typeAliases>
 
 	<plugins>
-		<plugin interceptor="com.littlenb.persistence.rs.ResultTypePlugin">
+		<plugin interceptor="com.littlenb.mybatisjpa.rs.ResultTypePlugin">
 		</plugin>
 	</plugins>
 </configuration>
