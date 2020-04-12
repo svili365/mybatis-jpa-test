@@ -1,9 +1,9 @@
 package com.littlenb.mybatisjpa.demo.test.definition;
 
-import com.alibaba.fastjson.JSON;
 import com.littlenb.mybatisjpa.demo.mapper.UserMapper;
 import com.littlenb.mybatisjpa.demo.model.User;
 import com.littlenb.mybatisjpa.demo.test.AbstractTest;
+import com.littlenb.mybatisjpa.demo.util.SerializeUtil;
 import com.littlenb.mybatisjpa.support.Certainty;
 import java.util.HashSet;
 import java.util.Set;
@@ -46,7 +46,7 @@ public class UpdateTest extends AbstractTest {
     includes.add("uniCode");
     int i = userMapper.updateByIdCertain(Certainty.includes(user, includes));
     System.out.println(i);
-    System.out.println(JSON.toJSONString(userMapper.selectById(id)));
+    System.out.println(SerializeUtil.toJSONString(userMapper.selectById(id)));
   }
 
 }

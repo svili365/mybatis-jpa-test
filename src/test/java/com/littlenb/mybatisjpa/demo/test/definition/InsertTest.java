@@ -1,9 +1,9 @@
 package com.littlenb.mybatisjpa.demo.test.definition;
 
-import com.alibaba.fastjson.JSON;
 import com.littlenb.mybatisjpa.demo.mapper.UserMapper;
 import com.littlenb.mybatisjpa.demo.model.User;
 import com.littlenb.mybatisjpa.demo.test.AbstractTest;
+import com.littlenb.mybatisjpa.demo.util.SerializeUtil;
 import com.littlenb.mybatisjpa.support.Certainty;
 import java.util.ArrayList;
 import java.util.Date;
@@ -52,7 +52,7 @@ public class InsertTest extends AbstractTest {
     includes.add("uniCode");
     includes.add("password");
     userMapper.insertCertain(Certainty.includes(user, includes));
-    System.out.println(JSON.toJSONString(user));
+    System.out.println(SerializeUtil.toJSONString(user));
   }
 
   @Test

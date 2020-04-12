@@ -6,6 +6,7 @@ import com.littlenb.mybatisjpa.statement.AnnotationStatementRegistry;
 import com.littlenb.mybatisjpa.support.AnnotationStatementScanner;
 import com.littlenb.mybatisjpa.support.Constant;
 import com.littlenb.mybatisjpa.support.MybatisJapConfiguration;
+import com.littlenb.mybatisjpa.util.NamingPolicy;
 import javax.annotation.PostConstruct;
 import org.apache.ibatis.executor.keygen.KeyGenerator;
 import org.apache.ibatis.session.Configuration;
@@ -25,9 +26,8 @@ public class MybatisJpaInitializer {
   @PostConstruct
   public void init() {
     MybatisJapConfiguration conf = MybatisJapConfiguration.getInstance();
-    conf.setCamelToUnderline(true);
-    conf.setTableCaseMode(Constant.LOWER_CASE_MODE);
-    conf.setColumnCaseMode(Constant.LOWER_CASE_MODE);
+    conf.setTableNamingStrategy(NamingPolicy.LOWER_CASE_WITH_UNDERSCORES);
+    conf.setColumnNamingStrategy(NamingPolicy.LOWER_CASE_WITH_UNDERSCORES);
 
     Configuration configuration = sqlSessionFactory.getConfiguration();
     KeyGenerator keyGenerator = new IdentityKeyGenerator(new MyIdGenerator());
